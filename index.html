@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RED DEV | Websites and online stores for Dubai businesses</title>
+<meta name="description" content="RED DEV builds profile websites for shops, restaurants and service businesses in Dubai, and runs Amazon, Noon, Shopify and WordPress stores for brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #E5261E;
+  --red-2: #FF5A4F;
+  --red-deep: #B3140D;
+  --hero: #0A0A10;
+  --bg: #F6F7FB;
+  --surface: #FFFFFF;
+  --text: #12141C;
+  --muted: #5A6275;
+  --line: #E1E4EC;
+  --soft: #FDECEA;
+  --display: "Bricolage Grotesque", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B0C12;
+    --surface: #13141D;
+    --text: #F2F3F8;
+    --muted: #A0A6B8;
+    --line: #242637;
+    --soft: #241214;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B0C12;
+  --surface: #13141D;
+  --text: #F2F3F8;
+  --muted: #A0A6B8;
+  --line: #242637;
+  --soft: #241214;
+}
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5rem); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red-2); outline-offset: 3px; border-radius: 6px; }
+.wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
+[hidden] { display: none !important; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font-family: var(--body); font-weight: 600; font-size: 1rem; text-decoration: none; padding: .85rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer; transition: transform .15s, background-color .15s, box-shadow .15s; }
+.btn:hover { transform: translateY(-2px); }
+.btn-red { background: linear-gradient(180deg, var(--red-2), var(--red)); color: #fff; box-shadow: 0 8px 28px rgba(229,38,30,.45); }
+.btn-red:hover { box-shadow: 0 12px 34px rgba(229,38,30,.6); }
+.btn-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.05); }
+.btn-ghost:hover { background: rgba(255,255,255,.12); }
+.btn-white { background: #fff; color: #12141C; }
+.btn-white:hover { background: #FFECEA; }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(10,10,16,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.08); color: #fff; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.2rem; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; font-family: var(--display); font-weight: 800; font-size: 1.35rem; letter-spacing: -.01em; text-decoration: none; }
+.brand-mark { width: 1.9rem; height: 1.9rem; border-radius: .55rem; background: linear-gradient(135deg, var(--red-2), var(--red-deep)); display: inline-grid; place-items: center; font-size: .8rem; font-weight: 800; box-shadow: 0 4px 14px rgba(229,38,30,.5); }
+.brand-logo { height: 2.3rem; width: auto; display: block; }
+.nav { display: flex; align-items: center; gap: 1.8rem; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; opacity: .85; }
+.nav a:not(.btn):hover { opacity: 1; }
+.nav .btn { padding: .55rem 1.1rem; font-size: .95rem; }
+.menu-btn { display: none; background: transparent; border: 1.5px solid rgba(255,255,255,.28); color: #fff; width: 2.7rem; height: 2.7rem; border-radius: .8rem; cursor: pointer; }
+.menu-btn svg { width: 1.3rem; height: 1.3rem; }
+@media (max-width: 820px) {
+  .menu-btn { display: inline-grid; place-items: center; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: .6rem 1.25rem 1.2rem; background: rgba(10,10,16,.96); border-bottom: 1px solid rgba(255,255,255,.1); display: none; }
+  .nav.open { display: flex; }
+  .nav a:not(.btn) { padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.08); opacity: 1; }
+  .nav .btn { margin-top: 1rem; padding: .85rem 1.5rem; }
+}
+
+/* Hero */
+.hero { position: relative; background: var(--hero); color: #fff; text-align: center; padding: 4.5rem 0 5rem; overflow: hidden; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(60rem 30rem at 72% -8%, rgba(229,38,30,.6), transparent 62%), radial-gradient(44rem 26rem at 0% 38%, rgba(229,38,30,.24), transparent 60%), radial-gradient(40rem 22rem at 100% 90%, rgba(229,38,30,.2), transparent 60%); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 52px 52px; -webkit-mask-image: radial-gradient(ellipse at 50% 20%, #000 10%, transparent 70%); mask-image: radial-gradient(ellipse at 50% 20%, #000 10%, transparent 70%); }
+.badge { display: inline-flex; align-items: center; gap: .55rem; font-size: .92rem; font-weight: 500; padding: .4rem 1rem; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); }
+.badge i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--red-2); box-shadow: 0 0 0 4px rgba(255,90,79,.25); }
+.hero h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.5rem, 7.4vw, 5.2rem); line-height: .98; letter-spacing: -.035em; margin: 1.4rem auto 1.3rem; max-width: 15ch; }
+.hero .lead { font-size: clamp(1.05rem, 2.2vw, 1.28rem); color: rgba(255,255,255,.76); max-width: 38rem; margin: 0 auto 2.1rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+.trust { margin-top: 1.6rem; font-size: .95rem; color: rgba(255,255,255,.6); }
+
+/* Preview */
+.preview { margin-top: 3.6rem; }
+.preview-label { font-weight: 500; color: rgba(255,255,255,.7); margin: 0 0 .9rem; }
+.niche-tabs { display: flex; gap: .5rem; margin: 0 auto 1.3rem; max-width: 56rem; overflow-x: auto; padding: .2rem .2rem .6rem; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+@media (min-width: 900px) { .niche-tabs { flex-wrap: wrap; justify-content: center; overflow: visible; } }
+.niche-tabs button { flex: 0 0 auto; font-family: var(--body); font-size: .93rem; font-weight: 500; color: #fff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); padding: .4rem .95rem; border-radius: 999px; cursor: pointer; transition: background-color .15s; }
+.niche-tabs button:hover { background: rgba(255,255,255,.14); }
+.niche-tabs button[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+.mock-glow { position: relative; max-width: 56rem; margin: 0 auto; }
+.mock-glow::before { content: ""; position: absolute; inset: 8% -4% -10%; background: radial-gradient(closest-side, rgba(229,38,30,.55), transparent); filter: blur(30px); z-index: -1; }
+.mock { --m-bg: #0F2A3D; --m-ink: #FFFFFF; --m-accent: #19C3E6; --m-font: var(--body); --m-card: #FFFFFF; --m-card-ink: #2A3348; text-align: left; background: var(--m-bg); color: var(--m-ink); font-family: var(--m-font); border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 70px rgba(0,0,0,.55); }
+.mock-bar { display: flex; align-items: center; gap: .4rem; padding: .7rem 1rem; background: #ECEEF3; color: #4A5468; font-family: var(--body); font-size: .8rem; }
+.mock-bar i { width: .62rem; height: .62rem; border-radius: 50%; background: #B8C0CE; display: inline-block; }
+.mock-bar span { margin-left: .6rem; background: #fff; border-radius: 999px; padding: .12rem .9rem; flex: 1; max-width: 16rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Mini-site inside the mock browser */
+.m-site { --line-c: color-mix(in srgb, var(--m-ink) 20%, transparent); height: 34rem; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+@media (max-width: 720px) { .m-site { height: 26rem; } }
+.m-site.swap { animation: mfade .28s ease; }
+@keyframes mfade { from { opacity: 0; transform: translateY(6px); } }
+.m-site img { display: block; }
+.m-top { position: sticky; top: 0; z-index: 6; display: flex; align-items: center; gap: .8rem; padding: .6rem 1.1rem; background: var(--m-bg); border-bottom: 1px solid var(--line-c); flex-wrap: wrap; }
+.m-top .m-brand { font-weight: 700; font-size: 1rem; margin-right: auto; }
+.m-top .m-link { font-size: .8rem; opacity: .85; cursor: pointer; }
+.m-top .m-link:hover { opacity: 1; }
+.m-cart { display: inline-flex; align-items: center; gap: .35rem; background: var(--m-accent); color: var(--m-bg); font-size: .75rem; font-weight: 700; padding: .28rem .65rem; border-radius: 999px; }
+.m-cart svg { width: .8rem; height: .8rem; }
+.m-pill { font-size: .75rem; font-weight: 600; border: 1px solid color-mix(in srgb, var(--m-ink) 35%, transparent); padding: .25rem .65rem; border-radius: 999px; }
+.m-hero { position: relative; }
+.m-hero img { width: 100%; height: 12.5rem; object-fit: cover; }
+.m-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 12%, color-mix(in srgb, var(--m-bg) 62%, transparent) 68%, var(--m-bg) 100%); }
+.m-hero-in { position: absolute; left: 1.1rem; right: 1.1rem; bottom: .8rem; z-index: 2; }
+.m-hero-in h3 { font-family: var(--m-font); font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.1; margin: 0 0 .25rem; letter-spacing: 0; }
+.m-hero-in p { font-size: .88rem; opacity: .92; margin: 0 0 .7rem; max-width: 30rem; }
+.m-btn { display: inline-block; background: var(--m-accent); color: var(--m-bg); font-family: var(--m-font); font-weight: 700; font-size: .84rem; padding: .48rem 1rem; border-radius: 8px; border: 0; cursor: pointer; }
+.m-btn:hover { filter: brightness(1.08); }
+.m-body { padding: .95rem 1.1rem 0; }
+.m-sec { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; opacity: .7; margin: 0 0 .55rem; }
+.m-products { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.7rem, 1fr)); gap: .7rem; }
+.m-prod { background: var(--m-card); color: var(--m-card-ink); border-radius: 12px; overflow: hidden; position: relative; }
+.m-prod img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.m-flag { position: absolute; top: .45rem; left: .45rem; z-index: 2; background: var(--m-accent); color: var(--m-bg); font-size: .63rem; font-weight: 700; padding: .16rem .5rem; border-radius: 999px; }
+.m-pi { padding: .55rem .65rem .65rem; }
+.m-pi b { display: block; font-size: .85rem; line-height: 1.25; font-weight: 700; }
+.m-pi small { display: block; font-size: .71rem; opacity: .62; margin-top: .12rem; }
+.m-prow { display: flex; justify-content: space-between; align-items: center; margin-top: .55rem; }
+.m-price { font-weight: 700; font-size: .9rem; }
+.m-add { background: var(--m-accent); color: var(--m-bg); border: 0; border-radius: 7px; font-weight: 700; font-size: .73rem; padding: .34rem .7rem; cursor: pointer; font-family: var(--body); }
+.m-add.ok { opacity: .75; }
+.m-menu { border: 1px solid var(--line-c); border-radius: 12px; overflow: hidden; margin-bottom: .9rem; }
+.m-mtabs { display: flex; }
+.m-mtabs button { flex: 1; border: 0; background: transparent; color: var(--m-ink); font-family: var(--m-font); font-size: .79rem; font-weight: 700; padding: .5rem 0; cursor: pointer; opacity: .65; }
+.m-mtabs button.on { background: var(--m-accent); color: var(--m-bg); opacity: 1; }
+.m-items { padding: .5rem .9rem .6rem; }
+.m-item { display: flex; align-items: center; gap: .6rem; padding: .45rem 0; border-bottom: 1px dashed color-mix(in srgb, var(--m-ink) 16%, transparent); }
+.m-item:last-child { border-bottom: 0; }
+.m-item img { width: 2.4rem; height: 2.4rem; border-radius: 8px; object-fit: cover; flex: 0 0 auto; }
+.m-item .mt b { display: block; font-size: .87rem; }
+.m-item .mt small { font-size: .72rem; opacity: .6; }
+.m-item .mp { margin-left: auto; font-weight: 700; font-size: .87rem; color: var(--m-accent); white-space: nowrap; }
+.m-pkgs { display: grid; gap: .55rem; margin-bottom: .95rem; }
+.m-pkg { display: flex; align-items: center; gap: .7rem; background: color-mix(in srgb, var(--m-ink) 7%, transparent); border: 1px solid var(--line-c); border-radius: 12px; padding: .55rem .8rem; }
+.m-pkg img { width: 3.1rem; height: 3.1rem; border-radius: 10px; object-fit: cover; flex: 0 0 auto; }
+.m-pkg b { display: block; font-size: .9rem; }
+.m-pkg small { font-size: .73rem; opacity: .65; }
+.m-pkg .pp { margin-left: auto; font-weight: 700; font-size: .9rem; color: var(--m-accent); white-space: nowrap; }
+.m-slots { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .7rem; }
+.m-slot { border: 1px solid color-mix(in srgb, var(--m-ink) 32%, transparent); background: transparent; color: var(--m-ink); font-family: var(--m-font); font-size: .76rem; font-weight: 600; padding: .32rem .62rem; border-radius: 8px; cursor: pointer; }
+.m-slot.on { background: var(--m-accent); border-color: var(--m-accent); color: var(--m-bg); }
+.m-slot[disabled] { opacity: .38; cursor: default; text-decoration: line-through; }
+.m-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.m-field { background: color-mix(in srgb, var(--m-ink) 8%, transparent); color: var(--m-ink); border: 1px solid color-mix(in srgb, var(--m-ink) 25%, transparent); border-radius: 8px; padding: .38rem .55rem; font-size: .79rem; font-family: var(--m-font); }
+select.m-field option { color: #12141C; background: #fff; }
+.m-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: .7rem; margin-bottom: .9rem; }
+.m-plan { border: 1px solid var(--line-c); border-radius: 12px; padding: .7rem .75rem .8rem; }
+.m-plan.hi { border-color: var(--m-accent); background: color-mix(in srgb, var(--m-accent) 13%, transparent); }
+.m-plan small { display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .65; }
+.m-plan b { display: block; font-size: 1.18rem; margin: .2rem 0 .1rem; }
+.m-plan p { font-size: .73rem; opacity: .7; margin: 0 0 .55rem; }
+.m-classes { display: flex; flex-wrap: wrap; gap: .4rem; }
+.m-class { font-size: .73rem; border: 1px solid var(--line-c); border-radius: 10px; padding: .38rem .6rem; font-weight: 600; }
+.m-class b { color: var(--m-accent); }
+.m-listings { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: .7rem; }
+.m-list { background: var(--m-card); color: var(--m-card-ink); border-radius: 12px; overflow: hidden; }
+.m-list img { width: 100%; height: 6rem; object-fit: cover; }
+.m-li { padding: .55rem .65rem .65rem; }
+.m-li b { display: block; font-size: .85rem; }
+.m-li small { display: block; font-size: .71rem; opacity: .62; margin-top: .1rem; }
+.m-li .lp { font-weight: 700; font-size: .95rem; margin: .4rem 0 .5rem; }
+.m-status { position: sticky; bottom: 0; z-index: 6; display: flex; align-items: center; gap: .45rem; padding: .55rem 1.1rem; margin-top: 1rem; background: var(--m-bg); border-top: 1px solid var(--line-c); font-size: .78rem; min-height: 2.35rem; }
+.m-status svg { flex: 0 0 .95rem; width: .95rem; height: .95rem; color: var(--m-accent); }
+.m-status.ok { color: var(--m-accent); font-weight: 600; }
+.preview-note { font-size: .9rem; margin: 1rem 0 0; color: rgba(255,255,255,.55); }
+/* Real-demo upgrades */
+.m-gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: .95rem; }
+.m-gal figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; }
+.m-gal img { width: 100%; height: 4.4rem; object-fit: cover; }
+.m-gal figcaption { position: absolute; left: 0; right: 0; bottom: 0; font-size: .6rem; font-weight: 700; letter-spacing: .02em; color: #fff; padding: .55rem .45rem .28rem; background: linear-gradient(180deg, transparent, rgba(0,0,0,.72)); }
+.m-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .7rem; }
+.m-chip { border: 1px solid color-mix(in srgb, var(--m-ink) 30%, transparent); background: transparent; color: var(--m-ink); font-family: var(--m-font); font-size: .74rem; font-weight: 600; padding: .3rem .7rem; border-radius: 999px; cursor: pointer; }
+.m-chip.on { background: var(--m-accent); border-color: var(--m-accent); color: var(--m-bg); }
+.m-rate { display: inline-flex; align-items: baseline; gap: .3rem; font-size: .7rem; color: #F5B301; letter-spacing: .06em; margin-top: .18rem; }
+.m-rate b { font-size: .72rem; color: var(--m-card-ink); opacity: .8; }
+.m-gold { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; border: 1px solid color-mix(in srgb, var(--m-accent) 45%, transparent); background: color-mix(in srgb, var(--m-accent) 10%, transparent); border-radius: 10px; padding: .5rem .7rem; margin-bottom: .9rem; font-size: .78rem; }
+.m-gold b { font-size: .95rem; color: var(--m-accent); }
+.m-gold small { opacity: .7; }
+.m-gold .up { color: #3CCB7F; font-weight: 700; }
+.m-gold .dn { color: #FF6B62; font-weight: 700; }
+.m-pkg { cursor: pointer; }
+.m-pkg.pick { border-color: var(--m-accent); background: color-mix(in srgb, var(--m-accent) 12%, transparent); }
+.m-form { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem .6rem; margin-bottom: .8rem; }
+.m-form .full { grid-column: 1 / -1; }
+.m-label { display: block; font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; opacity: .6; margin: 0 0 .25rem; }
+.m-reviews { display: grid; gap: .5rem; }
+.m-review { background: color-mix(in srgb, var(--m-ink) 6%, transparent); border: 1px solid var(--line-c); border-radius: 10px; padding: .55rem .7rem; font-size: .78rem; }
+.m-review b { display: block; font-size: .8rem; margin-bottom: .1rem; }
+.m-review .stars { color: #F5B301; font-size: .72rem; letter-spacing: .08em; margin-right: .4rem; }
+.m-agent { display: flex; align-items: center; gap: .7rem; background: var(--m-card); color: var(--m-card-ink); border-radius: 12px; padding: .6rem .8rem; margin-top: .95rem; }
+.m-agent img { width: 3.1rem; height: 3.1rem; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+.m-agent b { display: block; font-size: .88rem; }
+.m-agent small { font-size: .72rem; opacity: .65; }
+.m-agent button { margin-left: auto; flex: 0 0 auto; }
+.m-banner { display: flex; gap: .7rem; align-items: center; background: color-mix(in srgb, var(--m-accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--m-accent) 40%, transparent); border-radius: 12px; padding: .6rem .8rem; margin-bottom: .9rem; }
+.m-banner img { width: 4.2rem; height: 4.2rem; border-radius: 10px; object-fit: cover; flex: 0 0 auto; }
+.m-banner b { display: block; font-size: .86rem; }
+.m-banner small { display: block; font-size: .73rem; opacity: .75; margin: .12rem 0 .3rem; }
+.m-est { margin-top: .55rem; font-size: .8rem; }
+.m-out { font-weight: 700; color: var(--m-accent); }
+
+/* Marquee */
+.strip { background: var(--surface); border-block: 1px solid var(--line); padding: 1.1rem 0; overflow: hidden; }
+.track { display: flex; gap: .7rem; width: max-content; animation: slide 55s linear infinite; }
+.strip:hover .track { animation-play-state: paused; }
+.track span { white-space: nowrap; padding: .4rem 1rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-weight: 500; font-size: .95rem; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* Sections */
+section { padding: 5.5rem 0; }
+.sec-head { max-width: 40rem; margin-bottom: 2.6rem; }
+.sec-head.center { margin-inline: auto; text-align: center; }
+.kicker { display: inline-block; font-weight: 600; color: var(--red); margin-bottom: .6rem; }
+:root[data-theme="dark"] .kicker { color: var(--red-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .kicker { color: var(--red-2); } }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.05; letter-spacing: -.028em; margin: 0 0 .9rem; }
+h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.2; letter-spacing: -.015em; margin: 0 0 .5rem; }
+.muted { color: var(--muted); }
+p { margin: 0 0 1rem; }
+
+/* Cards */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 1.7rem; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-4px); border-color: rgba(229,38,30,.55); box-shadow: 0 18px 40px rgba(229,38,30,.12); }
+.icon { width: 3rem; height: 3rem; border-radius: 14px; background: var(--soft); color: var(--red); display: grid; place-items: center; margin-bottom: 1.1rem; }
+.icon svg { width: 1.5rem; height: 1.5rem; }
+.card ul { margin: .7rem 0 0; padding-left: 1.15rem; }
+.card li { margin: .3rem 0; }
+.bento { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .bento { grid-template-columns: repeat(2, 1fr); } .bento .wide { grid-column: span 2; } }
+@media (min-width: 980px) {
+  .bento { grid-template-columns: repeat(6, 1fr); }
+  .bento .wide { grid-column: span 4; }
+  .bento .tall { grid-column: span 2; }
+  .bento .third { grid-column: span 2; }
+}
+.card.feature { background: linear-gradient(160deg, #1C0C0E, #0A0A10 70%); color: #fff; border-color: rgba(255,255,255,.1); }
+.card.feature .icon { background: rgba(229,38,30,.2); color: var(--red-2); }
+.card.feature p, .card.feature li { color: rgba(255,255,255,.78); }
+
+/* Packages */
+.packs { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .packs { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .packs { grid-template-columns: repeat(4, 1fr); } }
+.pack { display: flex; flex-direction: column; }
+.pack .tag { align-self: flex-start; font-size: .82rem; font-weight: 600; padding: .2rem .7rem; border-radius: 999px; background: var(--soft); color: var(--red); margin-bottom: 1rem; }
+:root[data-theme="dark"] .pack .tag { color: var(--red-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pack .tag { color: var(--red-2); } }
+.pack p { color: var(--muted); flex: 1; }
+.pack.hot { border-color: var(--red); box-shadow: 0 18px 44px rgba(229,38,30,.18); }
+.pack.hot .tag { background: var(--red); color: #fff; }
+.pack .btn { margin-top: .6rem; width: 100%; }
+.btn-outline { border-color: var(--line); color: var(--text); }
+.btn-outline:hover { border-color: var(--red); }
+
+/* Process */
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.steps li { counter-increment: s; }
+.steps li::before { content: counter(s); display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--red); color: #fff; font-family: var(--display); font-weight: 800; margin-bottom: 1rem; }
+.steps p { color: var(--muted); margin: 0; }
+
+/* About */
+.about-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 900px) { .about-grid { grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: start; } }
+.roles { display: grid; gap: 1rem; }
+.role .when { font-weight: 600; color: var(--red); font-size: .95rem; }
+:root[data-theme="dark"] .role .when { color: var(--red-2); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .role .when { color: var(--red-2); } }
+.role p { color: var(--muted); margin: .3rem 0 0; }
+.facts { display: grid; gap: .8rem; margin: 1.6rem 0; }
+.fact { display: flex; gap: .8rem; align-items: flex-start; }
+.fact svg { flex: 0 0 1.4rem; width: 1.4rem; height: 1.4rem; color: var(--red); margin-top: .15rem; }
+.fine { font-size: .9rem; color: var(--muted); }
+.link-line a { font-weight: 600; text-underline-offset: 4px; }
+
+/* FAQ */
+.faq { max-width: 46rem; margin: 0 auto; display: grid; gap: .8rem; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 1.3rem; }
+.faq summary { cursor: pointer; font-weight: 600; padding: 1.1rem 0; list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.5rem; line-height: 1; color: var(--red); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { color: var(--muted); padding-bottom: 1.1rem; margin: 0; }
+
+/* CTA */
+.cta { padding: 2rem 0 5.5rem; }
+.cta-panel { position: relative; overflow: hidden; border-radius: 32px; padding: clamp(2.2rem, 6vw, 4.5rem); text-align: center; color: #fff; background: radial-gradient(40rem 20rem at 50% -20%, rgba(255,255,255,.28), transparent 60%), linear-gradient(135deg, #F0372E, #B3140D); box-shadow: 0 30px 70px rgba(229,38,30,.35); }
+.cta-panel h2 { font-size: clamp(2rem, 5.2vw, 3.6rem); max-width: 16ch; margin: 0 auto 1rem; }
+.cta-panel p { max-width: 32rem; margin: 0 auto 1.8rem; font-size: 1.15rem; color: rgba(255,255,255,.92); }
+.cta-panel .lines { margin: 1.6rem 0 0; font-size: 1rem; }
+.cta-panel .lines a { text-underline-offset: 4px; }
+.lead { margin: 1.6rem auto 0; max-width: 46rem; text-align: left; }
+.lead-title { font-size: 1rem; font-weight: 600; letter-spacing: .04em; margin: 0 0 .9rem; color: #fff; opacity: .95; }
+.lead-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .9rem; }
+.lead label { display: block; font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; color: rgba(255,255,255,.8); }
+.lead input, .lead select, .lead textarea { width: 100%; margin-top: .35rem; padding: .65rem .8rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.13); color: #fff; font: inherit; font-size: .95rem; box-sizing: border-box; }
+.lead select { color-scheme: dark; }
+.lead input::placeholder, .lead textarea::placeholder { color: rgba(255,255,255,.55); }
+.lead input:focus, .lead select:focus, .lead textarea:focus { outline: 2px solid rgba(255,255,255,.5); outline-offset: 1px; }
+.lead input[type="file"] { padding: .45rem .6rem; }
+.lead textarea { resize: vertical; }
+.lead .full { grid-column: 1 / -1; }
+.lead-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; margin-top: 1rem; }
+.lead-note { font-size: .9rem; margin: 0; color: rgba(255,255,255,.85); }
+.lead-note.ok { color: #B9F5C9; font-weight: 600; }
+.lead-note.err { color: #FFD9D6; font-weight: 600; }
+
+footer { border-top: 1px solid var(--line); padding: 1.6rem 0; font-size: .92rem; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+
+@media (max-width: 560px) { section { padding: 4rem 0; } .hero { padding: 3.2rem 0 4rem; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .track { animation: none; }
+  .btn, .card, .mock, .m-add, .m-slot { transition: none; }
+  .btn:hover, .card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap topbar">
+    <a class="brand" href="#top" id="top" aria-label="RED DEV - Web Development | Programming"><img class="brand-logo" src="https://base44.app/api/apps/6a99afe98d08be33d80fd595/files/mp/public/6a99afe98d08be33d80fd595/b25640048_05119b745_Gemini_Generated_Image_evib7jevib7jevib-removebg-preview.png" alt="RED DEV - Web Development | Programming" width="140" height="37"></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-red" href="#contact" data-wa>Message me</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:5rem;">
+  <div class="wrap">
+    <span class="badge"><i></i>Web design and e-commerce in Dubai</span>
+    <h1>Websites and online stores that help you sell.</h1>
+    <p class="lead">I'm Derick, the developer behind RED DEV. I build profile websites for shops, restaurants and service businesses, and I run Amazon, Noon, Shopify and WordPress for brands.</p>
+    <div class="cta-row">
+      <a class="btn btn-red" href="#contact" data-wa>Get a free preview</a>
+      <a class="btn btn-ghost" href="#packages">See packages</a>
+    </div>
+    <p class="trust">Free preview with your business name on it, before you pay anything.</p>
+
+    <div class="preview">
+      <p class="preview-label">Pick a business type — every sample has real photos and working features</p>
+      <div class="niche-tabs" id="tabs" role="group" aria-label="Sample business types"></div>
+      <div class="mock-glow">
+        <div class="mock" id="mock">
+          <div class="mock-bar"><i></i><i></i><i></i><span id="m-url">yourbusiness.ae</span></div>
+          <div class="m-site" id="m-site"></div>
+        </div>
+      </div>
+      <p class="preview-note">Working samples with real photos — click a category and try it: book a slot, filter, reserve a table, order a cake. Your name, logo and photos go in.</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Business types I build for">
+  <div class="track" id="track"></div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Services</span>
+      <h2>Two ways I can help</h2>
+      <p class="muted">Start with a simple website. Add online selling when you are ready.</p>
+    </div>
+    <div class="bento">
+      <div class="card feature wide">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></div>
+        <h3>Profile websites</h3>
+        <p>A clean one-page or small multi-page site that shows who you are, what you offer and how to reach you.</p>
+        <ul>
+          <li>Services or menu, photo gallery and opening hours</li>
+          <li>WhatsApp, call and Google Maps buttons</li>
+          <li>Instagram and Facebook links</li>
+        </ul>
+      </div>
+      <div class="card tall">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+        <h3>Made for phones</h3>
+        <p>Most customers will open your site on their phone, so every page is built for small screens first.</p>
+      </div>
+      <div class="card third">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 11h10l2-8H7"/><circle cx="9" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg></div>
+        <h3>Amazon and Noon</h3>
+        <p>Listings, SEO titles, A+ content and catalog updates, kept fresh every month.</p>
+      </div>
+      <div class="card third">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H6.7a1.5 1.5 0 0 1-1.5-1.3L4 8Z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg></div>
+        <h3>Shopify and WordPress</h3>
+        <p>Your own online store on Shopify or WooCommerce, with products, payments and shipping set up.</p>
+      </div>
+      <div class="card third">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5"/></svg></div>
+        <h3>Monthly care</h3>
+        <p>Pricing, promotions, inventory checks and a plain-language report, so your brand keeps moving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Packages</span>
+      <h2>Pick where to start</h2>
+      <p class="muted">Tell me about your business and I'll send a clear quote. Every package starts with a free preview.</p>
+    </div>
+    <div class="packs">
+      <div class="card pack">
+        <span class="tag">One-time</span>
+        <h3>Starter</h3>
+        <p>Profile website with your services, gallery, contact buttons and map.</p>
+        <a class="btn btn-outline" href="#contact" data-wa>Ask for a quote</a>
+      </div>
+      <div class="card pack">
+        <span class="tag">One-time</span>
+        <h3>Store</h3>
+        <p>Online store on Shopify or WooCommerce, with products, payments and shipping set up.</p>
+        <a class="btn btn-outline" href="#contact" data-wa>Ask for a quote</a>
+      </div>
+      <div class="card pack">
+        <span class="tag">One-time</span>
+        <h3>Marketplace</h3>
+        <p>Amazon or Noon setup with optimized listings and content for your products.</p>
+        <a class="btn btn-outline" href="#contact" data-wa>Ask for a quote</a>
+      </div>
+      <div class="card pack hot">
+        <span class="tag">Monthly</span>
+        <h3>Growth</h3>
+        <p>Ongoing updates, listing management, promotions and a plain-language monthly report.</p>
+        <a class="btn btn-red" href="#contact" data-wa>Ask for a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">How it works</span>
+      <h2>From first message to live site</h2>
+    </div>
+    <ol class="steps">
+      <li class="card"><h3>Tell me about your business</h3><p>Send your name, logo, photos, services and contact details on WhatsApp.</p></li>
+      <li class="card"><h3>See a free preview</h3><p>I build a quick draft with your real name on it, so you can judge it for yourself.</p></li>
+      <li class="card"><h3>Approve and adjust</h3><p>Tell me what to change. I update it until you are happy.</p></li>
+      <li class="card"><h3>Go live</h3><p>Your site goes online on your own domain, and you own it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" style="padding-top:0;">
+  <div class="wrap about-grid">
+    <div>
+      <span class="kicker">About</span>
+      <h2>I've run e-commerce for real brands</h2>
+      <p class="muted">That is why I build websites with selling in mind, not just looks.</p>
+      <div class="facts">
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Roughly AED 4.4 million in marketplace sales managed across my roles.</span></div>
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Hands-on with Amazon, Noon, Carrefour, Trendyol, eMall and StoreUs.</span></div>
+        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Based in Dubai, working with clients remotely.</span></div>
+      </div>
+      <p class="fine">Historical managed performance, not a promise of future results for any client.</p>
+      <p class="link-line">I also built and maintain the Mohammad Shojaei Jewellery website: <a href="https://mohammadshojaei.ae" target="_blank" rel="noopener">mohammadshojaei.ae</a></p>
+    </div>
+    <div class="roles">
+      <div class="card role">
+        <span class="when">2025 to 2026</span>
+        <h3>Head of Digital Marketing, Aztech Innovation</h3>
+        <p>Managed products across Amazon, Noon, Carrefour, Trendyol, eMall and StoreUs, plus Shopify, WordPress and WooCommerce sites, social media, pricing and PPC.</p>
+      </div>
+      <div class="card role">
+        <span class="when">2024 to 2025</span>
+        <h3>E-Commerce Manager, Baseus (Al Arqoob Trading LLC)</h3>
+        <p>Amazon FBA listings and SEO, PPC, pricing and promotions, Facebook and Instagram, and website management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="kicker">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Do I own my website and domain?</summary><p>Yes. Your domain is registered in your name and the site content belongs to you.</p></details>
+      <details><summary>What do I need to send you?</summary><p>Your business name, logo if you have one, photos, a list of services or products with prices, opening hours and your WhatsApp number. Don't have a logo yet? Tell me and we can work around it.</p></details>
+      <details><summary>Can you also handle my Amazon or Noon listings?</summary><p>Yes. I write the titles, bullets, descriptions and A+ content, keep the catalog updated, and report each month. You keep your accounts, products and pricing.</p></details>
+      <details><summary>How much does it cost?</summary><p>It depends on the package and what your business needs. Message me with your business type and I'll send a clear quote.</p></details>
+      <details><summary>Is the free preview really free?</summary><p>Yes. You see a draft with your business name on it first, and decide after.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-panel">
+      <h2>Ready to get your business online?</h2>
+      <p>Send me your business name and what you sell. I'll reply with a free preview idea.</p>
+      <div class="cta-row">
+        <a class="btn btn-white" href="#contact" data-wa>Message me on WhatsApp</a>
+      </div>
+      <form class="lead" id="lead-form">
+        <p class="lead-title">Or send it here — goes straight to my inbox</p>
+        <div class="lead-grid">
+          <label>Company name<input type="text" name="company_name" required placeholder="e.g. Olive &amp; Ember"></label>
+          <label>Your email<input type="email" name="email" required placeholder="you@company.ae"></label>
+          <label>Business type<input type="text" name="business_type" placeholder="e.g. car wash, clinic, flower shop"></label>
+          <label>Your logo (optional)<input type="file" name="attachment" accept="image/*"></label>
+          <label class="full">Tell me about your business (optional)<textarea name="message" rows="3" placeholder="What you sell, where in Dubai, anything else"></textarea></label>
+        </div>
+        <div class="lead-actions">
+          <button class="btn btn-white" type="submit" id="lead-send">Send</button>
+          <p class="lead-note" id="lead-note"></p>
+        </div>
+      </form>
+      <p class="lines"><span id="line-mail" hidden>Email: <a id="mail-link" href="#"></a><br></span>Based in Dubai, UAE. Working with clients remotely.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>RED DEV, Dubai, UAE</span>
+    <span>Websites and e-commerce support</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Edit these two lines, then republish. WhatsApp number: country code + number, digits only (e.g. 9715XXXXXXXX).
+  var CONFIG = { whatsapp: "971508910243", email: "dcabrera70074@gmail.com" };
+
+  var tabs = document.getElementById("tabs");
+  var mock = document.getElementById("mock");
+  var buttons = [];
+
+  var serif = "Georgia, 'Times New Roman', serif";
+  var sans = "var(--body)";
+  var B = "https://media.base44.com/images/public/6a5a46fc30905f9dd1417994/";
+  var P = function (f) { return B + f + "_generated_image.png"; };
+  var SLOTS_A = ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM", "6:00 PM", "8:00 PM"];
+  var SLOTS_B = ["11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM", "7:00 PM", "9:00 PM"];
+
+  var G = "https://media.base44.com/images/public/6a562da51251e76c7e1f3827/";
+  var Q = function (f) { return G + f + "_generated_image.png"; };
+
+  var DEMOS = [
+    { label: "Auto detailing", type: "booking", dark: 1, name: "Gleam Auto Detailing", domain: "gleamdetailing.ae",
+      bg: "#0F2A3D", ink: "#FFFFFF", accent: "#19C3E6", font: sans, card: "#FFFFFF", cardInk: "#1F2C3A",
+      nav: ["Home", "Services", "Gallery", "Contact"], pill: "Book now",
+      heroImg: P("dd898de04"), tag: "Showroom shine, at your door.", sub: "Interior, exterior and ceramic coating packages with free car pickup across Dubai.", btn: "Book a slot",
+      gallery: [{ img: Q("7998182c7"), cap: "Ceramic finish" }, { img: P("d6ea6b6ea"), cap: "Interior care" }, { img: P("b5fec61dd"), cap: "Paint protection" }],
+      pkgs: [
+        { img: P("d6ea6b6ea"), t: "Interior deep clean", s: "Steam and leather care · 3 hrs", p: "AED 349" },
+        { img: P("b5fec61dd"), t: "Ceramic coating 5H", s: "5-year paint protection · 1 day", p: "AED 1,499" },
+        { img: Q("7998182c7"), t: "Express exterior", s: "Foam wash + wax · 90 min", p: "AED 199" }
+      ],
+      form: [{ l: "Car model", ph: "e.g. Nissan Patrol" }, { l: "Your name", ph: "Full name" }, { l: "Mobile (for pickup)", ph: "05X XXX XXXX", full: 1 }],
+      slots: SLOTS_A, blocked: 2, confirmBtn: "Confirm booking",
+      status0: "Open Sat–Thu 9–9 · Free pickup across Dubai" },
+    { label: "Restaurant", type: "menu", dark: 0, name: "Olive & Ember", domain: "oliveandember.ae",
+      bg: "#FBF1E3", ink: "#3A2418", accent: "#C2461E", font: serif, card: "#FFFFFF", cardInk: "#3A2418",
+      nav: ["Home", "Menu", "Gallery", "Reserve"], pill: "Reserve",
+      heroImg: P("75dd1e11b"), tag: "Wood-fired, made fresh daily.", sub: "A Levantine kitchen in Jumeirah. Dine in, or order to your door on WhatsApp.", btn: "View the menu",
+      gallery: [{ img: Q("20ea6a445"), cap: "Our dining room" }, { img: P("e378cb2fe"), cap: "Mezze table" }, { img: P("ff624272a"), cap: "From the oven" }],
+      menus: [
+        { tab: "Mezze", items: [
+          { img: P("e378cb2fe"), n: "Hummus with spiced lamb", s: "Tahini, pine nuts", p: "AED 38" },
+          { n: "Muhammara", s: "Walnut, pomegranate molasses", p: "AED 34" },
+          { n: "Cheese fatayer", s: "Akkawi, wild thyme", p: "AED 30" }
+        ] },
+        { tab: "From the oven", items: [
+          { img: P("ff624272a"), n: "Margherita", s: "Brick oven, San Marzano", p: "AED 52" },
+          { n: "Lamb manakish", s: "Zaatar, sumac onions", p: "AED 58" },
+          { n: "Spinach borek", s: "Feta, crisp filo", p: "AED 36" }
+        ] },
+        { tab: "Grill", items: [
+          { n: "Mixed grill", s: "Lamb kebab, shish tawook", p: "AED 94" },
+          { n: "Meshwi lamb chops", s: "Charcoal, garlic sauce", p: "AED 120" },
+          { n: "Freekeh chicken", s: "Smoked freekeh, almonds", p: "AED 76" }
+        ] },
+        { tab: "Desserts", items: [
+          { n: "Kunafa", s: "Cheese, orange blossom", p: "AED 42" },
+          { n: "Pistachio baklava", s: "House-made, 4 pcs", p: "AED 38" },
+          { n: "Umm Ali", s: "With pistachio cream", p: "AED 34" }
+        ] }
+      ],
+      status0: "Open daily 12–11 · Jumeirah 1 · Free valet parking" },
+    { label: "Jewellery", type: "shop", dark: 1, name: "Aurum House", domain: "aurumhouse.ae",
+      bg: "#1C1608", ink: "#F6E7B4", accent: "#D4AF37", font: serif, card: "#FFFDF4", cardInk: "#3A2E18",
+      nav: ["Home", "Collections", "Gold rate", "Contact"], shopTitle: "This week's collections",
+      heroImg: P("f057e7107"), tag: "Fine gold, crafted to last.", sub: "22K and 18K pieces, with today's gold rate shown live in the shop.", btn: "Shop collections",
+      gold: { rate: 389.50 },
+      gallery: [{ img: Q("c8e806e9d"), cap: "Our atelier" }, { img: P("284f3ff78"), cap: "18K pendant" }, { img: P("09213791a"), cap: "Diamond setting" }],
+      items: [
+        { img: P("284f3ff78"), n: "Pendant necklace", s: "18K · 6.2 g", p: "AED 3,450", flag: "Best seller", r: 4.9 },
+        { img: P("09213791a"), n: "Diamond ring", s: "0.5 ct · 18K white", p: "AED 7,900", r: 5.0 },
+        { img: P("6b5607230"), n: "Heritage bangle", s: "22K · 12.4 g", p: "AED 5,120", r: 4.8 },
+        { img: Q("c8e806e9d"), n: "Custom design", s: "Made to order · 2 weeks", p: "From AED 2,000" }
+      ],
+      status0: "Gold rate updated daily · Certified pieces · Free resizing" },
+    { label: "Cosmetics", type: "shop", dark: 0, name: "Petal & Glow", domain: "petalandglow.ae",
+      bg: "#FFF0F3", ink: "#4A1D2B", accent: "#E0568A", font: sans, card: "#FFFFFF", cardInk: "#4A1D2B",
+      nav: ["Home", "Shop", "Bundles", "Reviews"], shopTitle: "Bestsellers",
+      heroImg: P("165406141"), tag: "Skincare you can trust.", sub: "Cruelty-free and dermatologist-tested. Shop here, or find us on Noon and Amazon.", btn: "Shop the range",
+      gallery: [{ img: Q("d2a0f8118"), cap: "The range" }, { img: P("d0b1a4525"), cap: "Vitamin C serum" }, { img: P("2d74b7540"), cap: "Hydra cream" }],
+      items: [
+        { img: P("d0b1a4525"), n: "Vitamin C serum", s: "30 ml · brightening", p: "AED 129", flag: "Best seller", r: 4.8 },
+        { img: P("2d74b7540"), n: "Hydra day cream", s: "50 ml · SPF 20", p: "AED 95", r: 4.6 },
+        { img: P("69fc0795d"), n: "Rose lip balm", s: "12 g · tinted", p: "AED 39", r: 4.7 },
+        { img: Q("d2a0f8118"), n: "Glow starter set", s: "Serum + cream + balm", p: "AED 229", flag: "Save 15%", r: 4.9 }
+      ],
+      reviews: [
+        { r: 5, n: "Mariam A.", t: "Serum is lovely — dark spots lighter in 3 weeks. Delivery next day." },
+        { r: 4, n: "Jana K.", t: "Cream texture is light and no breakouts. Repurchasing for my sister too." }
+      ],
+      status0: "Free delivery in Dubai over AED 150 · Also on Noon & Amazon" },
+    { label: "Baby products", type: "shop", dark: 0, name: "Little Nest", domain: "littlenest.ae",
+      bg: "#EEF7FF", ink: "#1F3B57", accent: "#F2A33A", font: sans, card: "#FFFFFF", cardInk: "#1F3B57",
+      nav: ["Home", "Shop", "By age", "Gift sets"], shopTitle: "Shop by age",
+      heroImg: P("9ea2dae63"), tag: "Soft, safe, and made for tiny hands.", sub: "Everyday essentials and gift sets, sorted by age. Same-day delivery in Dubai.", btn: "Shop by age",
+      gallery: [{ img: Q("1a13f6dd4"), cap: "The nursery edit" }, { img: P("6c0e31d11"), cap: "Plush bunny" }, { img: P("d05747d4f"), cap: "Feeding time" }],
+      filters: [{ k: "all", l: "All ages" }, { k: "0", l: "0–6 months" }, { k: "6", l: "6–12 months" }, { k: "1", l: "1–3 years" }],
+      items: [
+        { img: P("6c0e31d11"), n: "Plush bunny", s: "0+ months · organic cotton", p: "AED 89", k: "0" },
+        { img: P("293df6dce"), n: "Layette set", s: "3–12 months · 4 pcs", p: "AED 145", k: "6" },
+        { img: P("d05747d4f"), n: "Anti-colic bottles", s: "Set of 2 · BPA-free", p: "AED 119", k: "0", flag: "Gift wrap free" },
+        { img: Q("1a13f6dd4"), n: "Wooden activity gym", s: "1–3 years · foldable", p: "AED 239", k: "1" }
+      ],
+      status0: "Same-day delivery in Dubai · Gift wrapping available" },
+    { label: "Salon & barber", type: "booking", dark: 1, name: "Velvet Salon & Barber", domain: "velvetsalon.ae",
+      bg: "#24152B", ink: "#F7EAFB", accent: "#E58AC7", font: sans, card: "#FFFFFF", cardInk: "#24152B",
+      nav: ["Home", "Services", "Team", "Book"], pill: "Book now",
+      heroImg: P("6b393ca6e"), tag: "Look sharp. Feel great.", sub: "Cuts, color and grooming by senior stylists in Al Barsha 2.", btn: "Book your chair",
+      gallery: [{ img: Q("a9d0ccced"), cap: "The studio" }, { img: P("d250906f4"), cap: "Cut & beard" }, { img: P("b1525206e"), cap: "Color studio" }],
+      pkgs: [
+        { img: P("d250906f4"), t: "Cut & beard", s: "45 min · senior barber", p: "AED 120" },
+        { img: P("b1525206e"), t: "Color + blow dry", s: "2.5 hrs · master stylist", p: "AED 450" },
+        { img: Q("a9d0ccced"), t: "Kids cut", s: "25 min · under 10s", p: "AED 65" }
+      ],
+      team: ["Rami · Senior barber", "Sara · Master stylist", "Lina · Color specialist"],
+      form: [{ l: "Your name", ph: "Full name" }, { l: "Mobile", ph: "05X XXX XXXX" }],
+      slots: SLOTS_B, blocked: 1, confirmBtn: "Confirm booking",
+      status0: "Private women's floor · Open daily 10 AM–10 PM" },
+    { label: "Gym & fitness", type: "gym", dark: 1, name: "Pulse Fitness Club", domain: "pulsefitness.ae",
+      bg: "#0E2A1B", ink: "#F1FFE8", accent: "#9BE15D", font: sans, card: "#FFFFFF", cardInk: "#123322",
+      nav: ["Home", "Plans", "Classes", "Trainers"], pill: "Free trial",
+      heroImg: P("ea69ce3a8"), tag: "Train with a plan.", sub: "Strength zones, classes and coaching in Al Quoz. Your first session is free.", btn: "Start free trial",
+      gallery: [{ img: Q("c3f57c758"), cap: "Strength zone" }, { img: P("bb9bc4b6b"), cap: "Conditioning" }, { img: P("d5935b505"), cap: "PT studio" }],
+      plans: [
+        { t: "Day pass", p: "AED 59", s: "All zones · 1 day" },
+        { t: "Monthly", p: "AED 299", s: "Unlimited classes + sauna", hi: 1 },
+        { t: "Yearly", p: "AED 2,499", s: "2 months free + 1 PT session" }
+      ],
+      classes: [["Mon", "7:00 PM · HIIT"], ["Tue", "8:00 PM · Spin"], ["Wed", "6:30 PM · Box fit"], ["Thu", "7:00 PM · Yoga"], ["Sat", "10:00 AM · CrossFit"]],
+      coaches: [
+        { img: P("bb9bc4b6b"), t: "Coach Maya", s: "Classes & conditioning" },
+        { img: P("d5935b505"), t: "Coach Karim", s: "Strength & personal training" }
+      ],
+      status0: "No lock-in contracts · Towels and lockers included" },
+    { label: "Real estate", type: "estate", dark: 0, name: "Harbor Key Properties", domain: "harborkey.ae",
+      bg: "#EAF0F2", ink: "#17313B", accent: "#1F7A8C", font: sans, card: "#FFFFFF", cardInk: "#17313B",
+      nav: ["Home", "Listings", "Sell", "About"], pill: "Enquire",
+      heroImg: P("d40a3c6bf"), tag: "Find your next address.", sub: "Handpicked apartments and villas across Dubai, with same-day viewings.", btn: "See listings",
+      filters: [{ k: "all", l: "All homes" }, { k: "apt", l: "Apartments" }, { k: "villa", l: "Villas" }],
+      listings: [
+        { img: P("54e3d25cd"), n: "Marina Vista 2BR", s: "2 bed · 1,240 sqft · Marina", p: "AED 1.85M", k: "apt" },
+        { img: P("637423f2c"), n: "Palm Oasis Villa", s: "5 bed · Private pool · Palm Jumeirah", p: "AED 12.5M", k: "villa", flag: "New" },
+        { img: P("079d7f436"), n: "Skyline Loft 1BR", s: "1 bed · 861 sqft · Downtown", p: "AED 1.4M", k: "apt" },
+        { img: Q("4707f8baa"), n: "Creek Gate 3BR", s: "3 bed · Balcony · Creek views", p: "AED 2.9M", k: "apt" }
+      ],
+      agent: { img: Q("4707f8baa"), n: "Rania Haddad", s: "RERA-registered · 6 yrs in Dubai" },
+      status0: "Same-day viewings · RERA-registered agents · No fees for buyers" },
+    { label: "Perfume", type: "shop", dark: 1, name: "Oud & Amber", domain: "oudandamber.ae",
+      bg: "#2B1A12", ink: "#F8E6D3", accent: "#E0A25A", font: serif, card: "#FFF9F0", cardInk: "#3A2617",
+      nav: ["Home", "Collections", "Gift sets", "Contact"], shopTitle: "Signature scents",
+      heroImg: P("4c7c8bbb5"), tag: "Scents with a story.", sub: "French and oriental fragrances, blended and bottled in Dubai.", btn: "Explore fragrances",
+      gold: null,
+      gallery: [{ img: Q("fdc87ae24"), cap: "The boutique" }, { img: P("8d1a5ba08"), cap: "Amber Nuit" }, { img: P("e9cb4ef55"), cap: "Gift sets" }],
+      banner: { img: Q("fdc87ae24"), t: "Free engraving on gift sets", s: "Add a name on the bottle — up to 12 characters.", btn: "Add engraving", act: "engrave" },
+      items: [
+        { img: P("8d1a5ba08"), n: "Amber Nuit EDP", s: "100 ml · amber, vanilla, musk", p: "AED 420", flag: "Best seller", r: 4.9 },
+        { img: P("0a70da651"), n: "Royal Oud", s: "75 ml · oud, saffron, rose", p: "AED 780", r: 4.8 },
+        { img: P("e9cb4ef55"), n: "Discovery set", s: "4 × 12 ml travel sprays", p: "AED 260", flag: "Gift ready", r: 5.0 }
+      ],
+      status0: "Free engraving on gift sets · Delivery across the GCC" },
+    { label: "Electronics", type: "shop", dark: 1, name: "Circuit Corner", domain: "circuitcorner.ae",
+      bg: "#101A2E", ink: "#E8F0FF", accent: "#4C8DFF", font: sans, card: "#FFFFFF", cardInk: "#17233F",
+      nav: ["Home", "Shop", "Repairs", "Trade-in"], shopTitle: "Just landed",
+      heroImg: P("5961736f8"), tag: "Phones, accessories and repairs.", sub: "Latest stock with UAE warranty. Trade in your old phone today.", btn: "Check stock",
+      gallery: [{ img: Q("310f97fe1"), cap: "Repair bench" }, { img: P("a79aa28d6"), cap: "Nova X5 Pro" }, { img: P("3c8942305"), cap: "Audio bar" }],
+      banner: { img: Q("310f97fe1"), t: "Trade in your old phone", s: "Get an instant estimate, use it like cash in the shop.", btn: "Get estimate", act: "tradein" },
+      tradein: [
+        { id: "ti-model", l: "Your phone", opts: ["Nova X4", "Nova X3", "Pulse 9", "Other brand"] },
+        { id: "ti-cond", l: "Condition", opts: ["Like new", "Good", "Fair"] }
+      ],
+      items: [
+        { img: P("a79aa28d6"), n: "Nova X5 Pro", s: "256 GB · 1-year UAE warranty", p: "AED 2,399", flag: "New", r: 4.7 },
+        { img: P("3c8942305"), n: "PulseBuds Air", s: "ANC · 30h battery", p: "AED 349", r: 4.6 },
+        { img: P("d3e07d909"), n: "Tempo Watch", s: "GPS · AMOLED", p: "AED 599", flag: "Low stock", r: 4.5 },
+        { img: Q("310f97fe1"), n: "Screen repair", s: "Most models · 45 min", p: "From AED 149" }
+      ],
+      status0: "UAE warranty on everything · Same-day repairs · Trade-in accepted" },
+    { label: "Pet shop", type: "shop", dark: 0, name: "Paws Place", domain: "pawsplace.ae",
+      bg: "#FFF6E5", ink: "#3B2A12", accent: "#E07A1F", font: sans, card: "#FFFFFF", cardInk: "#3B2A12",
+      nav: ["Home", "Shop", "Grooming", "Vet"], shopTitle: "Popular this week",
+      heroImg: P("7aad9b42d"), tag: "Everything for happy pets.", sub: "Food, toys, grooming and vet contacts, delivered same-day in Dubai.", btn: "Shop pet care",
+      gallery: [{ img: Q("30d22e3f1"), cap: "Grooming studio" }, { img: P("2881adbbe"), cap: "Feed & treats" }, { img: P("b644574f7"), cap: "Cat corner" }],
+      filters: [{ k: "all", l: "All pets" }, { k: "dog", l: "For dogs" }, { k: "cat", l: "For cats" }],
+      banner: { img: Q("30d22e3f1"), t: "Spa & grooming this week", s: "Wash, trim and nails — from AED 89. Booked on WhatsApp.", btn: "Book grooming", act: "groom" },
+      items: [
+        { img: P("2881adbbe"), n: "Salmon kibble", s: "5 kg · all breeds", p: "AED 189", k: "dog" },
+        { img: P("238d4e9c8"), n: "Play box", s: "6 chew toys", p: "AED 79", flag: "Best seller", k: "dog" },
+        { img: P("b644574f7"), n: "Cozy cat bed", s: "Machine-washable", p: "AED 129", k: "cat" },
+        { img: Q("30d22e3f1"), n: "Grooming package", s: "Wash, trim & nails", p: "AED 89", k: "dog" }
+      ],
+      status0: "Same-day delivery in Dubai · Free vet chat on WhatsApp" },
+    { label: "Bakery", type: "bakery", dark: 0, name: "Golden Crumb Bakery", domain: "goldencrumb.ae",
+      bg: "#F3ECFF", ink: "#3A2466", accent: "#8E5BE8", font: serif, card: "#FFFFFF", cardInk: "#3A2466",
+      nav: ["Home", "Menu", "Cakes", "Order"], shopTitle: "Fresh from the oven",
+      heroImg: P("933924076"), tag: "Baked fresh every morning.", sub: "Sourdough, pastries and custom cakes for events across Dubai.", btn: "Order a cake",
+      gallery: [{ img: Q("5faf1c6bc"), cap: "The counter" }, { img: P("c3ea9b764"), cap: "Celebration cakes" }, { img: P("680f39e29"), cap: "Morning batch" }],
+      items: [
+        { img: P("c3ea9b764"), n: "Berry celebration cake", s: "8 inch · serves 10", p: "AED 210", flag: "24h notice" },
+        { img: P("680f39e29"), n: "Butter croissants", s: "Box of 6", p: "AED 42" },
+        { img: P("42cf21b9d"), n: "Cookie gift box", s: "16 pieces", p: "AED 95", flag: "Gift ready" },
+        { img: Q("5faf1c6bc"), n: "Country sourdough", s: "800 g · today's bake", p: "AED 24" }
+      ],
+      status0: "Order by 6 PM for next-morning pickup · Custom cakes in 24h" }
+  ];
+
+  var site, urlBar, current = 0, carts = {}, slotPick = -1, menuTab = 0, pkgPick = -1, teamPick = -1, shopFilter = "all", engraveOn = false;
+
+  function checkSVG() { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>'; }
+  function cartSVG() { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H6.7a1.5 1.5 0 0 1-1.5-1.3L4 8Z"/><path d="M8.5 8V6.5a3.5 3.5 0 0 1 7 0V8"/></svg>'; }
+  function status(msg, ok) {
+    var el = document.getElementById("m-status");
+    if (!el) return;
+    el.className = "m-status" + (ok ? " ok" : "");
+    el.innerHTML = (ok ? checkSVG() : "") + "<span>" + msg + "</span>";
+  }
+  function stars(r) {
+    var s = "";
+    for (var i = 1; i <= 5; i++) s += i <= Math.round(r) ? "\u2605" : "\u2606";
+    return '<span class="m-rate">' + s + ' <b>' + r.toFixed(1) + '</b></span>';
+  }
+  function todayISO() { return new Date().toISOString().slice(0, 10); }
+  function prettyDate(iso) { try { return new Date(iso + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }); } catch (e) { return iso; } }
+
+  function topHTML(d) {
+    var right = d.type === "shop" || d.type === "bakery"
+      ? '<span class="m-cart">' + cartSVG() + ' Cart <b id="m-cart">0</b></span>'
+      : '<span class="m-pill">' + d.pill + '</span>';
+    var links = d.nav.map(function (n) { return '<span class="m-link">' + n + '</span>'; }).join("");
+    return '<div class="m-top"><b class="m-brand">' + d.name + '</b>' + links + right + '</div>';
+  }
+  function heroHTML(d) {
+    return '<div class="m-hero"><img src="' + d.heroImg + '" alt=""><div class="m-hero-in"><h3>' + d.tag + '</h3><p>' + d.sub + '</p><button class="m-btn" data-act="hero">' + d.btn + '</button></div></div>';
+  }
+  function galleryHTML(d) {
+    if (!d.gallery) return "";
+    var figs = d.gallery.map(function (g) {
+      return '<figure><img src="' + g.img + '" alt="" loading="lazy"><figcaption>' + g.cap + '</figcaption></figure>';
+    }).join("");
+    return '<div class="m-body"><p class="m-sec">Gallery</p><div class="m-gal">' + figs + '</div></div>';
+  }
+  function shopCards(d) {
+    return d.items.filter(function (it) { return !d.filters || shopFilter === "all" || it.k === shopFilter; }).map(function (it) {
+      return '<div class="m-prod">' + (it.flag ? '<span class="m-flag">' + it.flag + '</span>' : '') +
+        '<img src="' + it.img + '" alt="" loading="lazy"><div class="m-pi"><b>' + it.n + '</b><small>' + it.s + '</small>' + (it.r ? stars(it.r) : '') +
+        '<div class="m-prow"><span class="m-price">' + it.p + '</span><button class="m-add" data-act="add" data-n="' + it.n + '">Add to cart</button></div></div></div>';
+    }).join("");
+  }
+  function shopHTML(d) {
+    var out = '<div class="m-body" id="m-mod">';
+    if (d.gold) {
+      out += '<div class="m-gold"><span>Today\u2019s gold rate</span> <b id="m-gold-rate">AED ' + d.gold.rate.toFixed(2) + '</b> <small>/ gram · 22K</small> <small id="m-gold-delta" class="up">\u2191 0.50</small><small style="margin-left:auto">Updated daily</small></div>';
+    }
+    if (d.banner) {
+      out += '<div class="m-banner"><img src="' + d.banner.img + '" alt="" loading="lazy"><span><b>' + d.banner.t + '</b><small>' + d.banner.s + '</small>' +
+        '<button class="m-add" data-act="' + d.banner.act + '">' + d.banner.btn + '</button></span></div>';
+    }
+    if (d.tradein) {
+      out += '<div id="ti-box">' + d.tradein.map(function (f) {
+        return '<span class="full" style="display:block;margin-bottom:.4rem"><label class="m-label" for="' + f.id + '">' + f.l + '</label><select class="m-field" id="' + f.id + '" style="width:100%">' +
+          f.opts.map(function (o) { return '<option>' + o + '</option>'; }).join("") + '</select></span>';
+      }).join("") + '<p class="m-est" id="ti-out"></p></div>';
+    }
+    if (d.filters) {
+      out += '<div class="m-chips">' + d.filters.map(function (f) {
+        return '<button class="m-chip' + (f.k === shopFilter ? ' on' : '') + '" data-act="filter" data-k="' + f.k + '">' + f.l + '</button>';
+      }).join("") + '</div>';
+    }
+    out += '<p class="m-sec">' + (d.shopTitle || "Shop") + '</p><div class="m-products" id="m-prods">' + shopCards(d) + '</div>';
+    if (d.reviews) {
+      out += '<p class="m-sec" style="margin-top:.9rem">Customer reviews</p><div class="m-reviews">' + d.reviews.map(function (r) {
+        return '<div class="m-review">' + stars(r.r) + '<b>' + r.n + '</b>' + r.t + '</div>';
+      }).join("") + '</div>';
+    }
+    return out + '</div>';
+  }
+  function bookingHTML(d) {
+    var pkgs = d.pkgs.map(function (p, k) {
+      return '<button type="button" class="m-pkg' + (k === pkgPick ? ' pick' : '') + '" data-act="pkg" data-k="' + k + '"><img src="' + p.img + '" alt="" loading="lazy"><span class="mt"><b>' + p.t + '</b><small>' + p.s + '</small></span><span class="pp">' + p.p + '</span></button>';
+    }).join("");
+    var slots = d.slots.map(function (s, k) {
+      return '<button class="m-slot" data-act="slot" data-k="' + k + '"' + (k === d.blocked ? ' disabled title="Already booked"' : '') + '>' + s + '</button>';
+    }).join("");
+    var fields = (d.form || []).map(function (f, k) {
+      return '<span class="' + (f.full ? 'full' : '') + '"><label class="m-label" for="bf' + k + '">' + f.l + '</label><input class="m-field" id="bf' + k + '" style="width:100%" placeholder="' + (f.ph || '') + '"></span>';
+    }).join("");
+    var team = d.team
+      ? '<p class="m-sec">Pick your ' + (d.label === "Salon & barber" ? "stylist" : "specialist") + '</p><div class="m-chips">' + d.team.map(function (m, k) {
+          return '<button type="button" class="m-chip' + (k === teamPick ? ' on' : '') + '" data-act="stylist" data-k="' + k + '">' + m + '</button>';
+        }).join("") + '</div>'
+      : "";
+    return '<div class="m-body" id="m-mod"><p class="m-sec">Choose a package</p><div class="m-pkgs">' + pkgs + '</div>' +
+      '<p class="m-sec">Your details</p><div class="m-form"><span class="full"><label class="m-label" for="b-date">Preferred date</label><input type="date" class="m-field" id="b-date" style="width:100%" value="' + todayISO() + '" min="' + todayISO() + '"></span>' + fields + '</div>' +
+      team +
+      '<p class="m-sec">Pick a time</p><div class="m-slots">' + slots + '</div><button class="m-btn" data-act="book">' + d.confirmBtn + '</button></div>';
+  }
+  function menuItemsHTML(d) {
+    return d.menus[menuTab].items.map(function (it) {
+      return '<div class="m-item">' + (it.img ? '<img src="' + it.img + '" alt="" loading="lazy">' : '') + '<span class="mt"><b>' + it.n + '</b><small>' + it.s + '</small></span><span class="mp">' + it.p + '</span></div>';
+    }).join("");
+  }
+  function menuHTML(d) {
+    var tabs = d.menus.map(function (m, k) { return '<button data-act="mtab" data-k="' + k + '" class="' + (k === menuTab ? "on" : "") + '">' + m.tab + '</button>'; }).join("");
+    return '<div class="m-body" id="m-mod"><div class="m-menu"><div class="m-mtabs">' + tabs + '</div><div class="m-items" id="m-items">' + menuItemsHTML(d) + '</div></div>' +
+      '<p class="m-sec" style="margin-top:.9rem;">Reserve a table</p>' +
+      '<div class="m-row"><input type="date" class="m-field" id="r-date" value="' + todayISO() + '" min="' + todayISO() + '">' +
+      '<select class="m-field" id="r-time"><option>6:00 PM</option><option selected>7:30 PM</option><option>8:30 PM</option><option>9:30 PM</option></select>' +
+      '<select class="m-field" id="r-guests"><option>2 guests</option><option>1 guest</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option></select>' +
+      '<button class="m-btn" data-act="reserve">Reserve</button></div>' +
+      '<p class="m-sec" style="margin-top:.9rem;">Too comfy at home?</p>' +
+      '<button class="m-btn" data-act="order">Order on WhatsApp</button></div>';
+  }
+  function gymHTML(d) {
+    var plans = d.plans.map(function (p) {
+      return '<div class="m-plan' + (p.hi ? ' hi' : '') + '"><small>' + p.t + '</small><b>' + p.p + '</b><p>' + p.s + '</p><button class="m-btn" data-act="join" data-n="' + p.t + '">' + (p.hi ? 'Join today' : 'Choose plan') + '</button></div>';
+    }).join("");
+    var classes = d.classes.map(function (c) { return '<span class="m-class"><b>' + c[0] + '</b> ' + c[1] + '</span>'; }).join("");
+    var coaches = d.coaches.map(function (c) {
+      return '<div class="m-pkg"><img src="' + c.img + '" alt="" loading="lazy"><span class="mt"><b>' + c.t + '</b><small>' + c.s + '</small></span></div>';
+    }).join("");
+    return '<div class="m-body" id="m-mod"><p class="m-sec">Memberships</p><div class="m-plans">' + plans + '</div><p class="m-sec">Classes this week</p><div class="m-classes">' + classes + '</div><p class="m-sec" style="margin-top:.9rem;">Your coaches</p><div class="m-pkgs">' + coaches + '</div>' +
+      '<p class="m-sec" style="margin-top:.9rem;">Free trial session</p>' +
+      '<div class="m-form"><span><label class="m-label" for="t-name">Name</label><input class="m-field" id="t-name" style="width:100%" placeholder="Your name"></span>' +
+      '<span><label class="m-label" for="t-phone">Mobile</label><input class="m-field" id="t-phone" style="width:100%" placeholder="05X XXX XXXX"></span>' +
+      '<span class="full"><label class="m-label" for="t-goal">Goal</label><select class="m-field" id="t-goal" style="width:100%"><option>Lose weight</option><option>Build muscle</option><option>Stay fit</option><option>Boxing basics</option></select></span></div>' +
+      '<button class="m-btn" data-act="trial">Book my free session</button></div>';
+  }
+  function estateCards(d) {
+    return d.listings.filter(function (l) { return shopFilter === "all" || l.k === shopFilter; }).map(function (l) {
+      return '<div class="m-list">' + (l.flag ? '<span class="m-flag">' + l.flag + '</span>' : '') + '<img src="' + l.img + '" alt="" loading="lazy"><div class="m-li"><b>' + l.n + '</b><small>' + l.s + '</small><div class="lp">' + l.p + '</div><button class="m-add" data-act="view" data-n="' + l.n + '">Book a viewing</button></div></div>';
+    }).join("");
+  }
+  function estateHTML(d) {
+    var chips = d.filters.map(function (f) {
+      return '<button class="m-chip' + (f.k === shopFilter ? ' on' : '') + '" data-act="filter" data-k="' + f.k + '">' + f.l + '</button>';
+    }).join("");
+    var agent = d.agent
+      ? '<div class="m-agent"><img src="' + d.agent.img + '" alt="" loading="lazy"><span><b>' + d.agent.n + '</b><small>' + d.agent.s + '</small></span><button class="m-add" data-act="wa">WhatsApp Rania</button></div>'
+      : "";
+    return '<div class="m-body" id="m-mod"><p class="m-sec">Browse listings</p><div class="m-chips">' + chips + '</div><div class="m-listings" id="m-prods">' + estateCards(d) + '</div>' + agent + '</div>';
+  }
+  function bakeryHTML(d) {
+    return '<div class="m-body" id="m-mod"><p class="m-sec">' + (d.shopTitle || "Fresh today") + '</p><div class="m-products" id="m-prods">' + shopCards(d) + '</div>' +
+      '<p class="m-sec" style="margin-top:.9rem;">Order a custom cake</p>' +
+      '<div class="m-form">' +
+      '<span><label class="m-label" for="c-size">Size</label><select class="m-field" id="c-size" style="width:100%"><option>8 inch · serves 10</option><option>10 inch · serves 16</option><option>2 tier · serves 30</option></select></span>' +
+      '<span><label class="m-label" for="c-flavour">Flavour</label><select class="m-field" id="c-flavour" style="width:100%"><option>Vanilla berry</option><option>Chocolate fudge</option><option>Pistachio rose</option><option>Red velvet</option></select></span>' +
+      '<span class="full"><label class="m-label" for="c-msg">Message on the cake</label><input class="m-field" id="c-msg" style="width:100%" placeholder="Happy Birthday Amira!"></span>' +
+      '<span class="full"><label class="m-label" for="c-date">Pickup date</label><input type="date" class="m-field" id="c-date" style="width:100%" value="' + todayISO() + '" min="' + todayISO() + '"></span>' +
+      '</div><button class="m-btn" data-act="cake">Request my cake</button></div>';
+  }
+
+  function render(i) {
+    current = i;
+    var d = DEMOS[i];
+    mock.style.setProperty("--m-bg", d.bg);
+    mock.style.setProperty("--m-ink", d.ink);
+    mock.style.setProperty("--m-accent", d.accent);
+    mock.style.setProperty("--m-font", d.font);
+    mock.style.setProperty("--m-card", d.card);
+    mock.style.setProperty("--m-card-ink", d.cardInk);
+    site.style.colorScheme = d.dark ? "dark" : "light";
+    urlBar.textContent = d.domain;
+    slotPick = -1; menuTab = 0; pkgPick = -1; teamPick = -1; shopFilter = "all";
+    var mod = d.type === "shop" ? shopHTML(d) : d.type === "booking" ? bookingHTML(d) : d.type === "menu" ? menuHTML(d) : d.type === "gym" ? gymHTML(d) : d.type === "estate" ? estateHTML(d) : bakeryHTML(d);
+    site.innerHTML = topHTML(d) + heroHTML(d) + galleryHTML(d) + mod + '<div class="m-status" id="m-status"><span>' + d.status0 + '</span></div>';
+    site.classList.remove("swap"); void site.offsetWidth; site.classList.add("swap");
+    if (d.type === "shop" || d.type === "bakery") { var c = document.getElementById("m-cart"); if (c) c.textContent = carts[i] || 0; }
+    buttons.forEach(function (b, k) { b.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+  }
+
+  site = document.getElementById("m-site");
+  urlBar = document.getElementById("m-url");
+
+  site.addEventListener("click", function (e) {
+    var t = e.target.closest("[data-act]");
+    if (!t) return;
+    var d = DEMOS[current], act = t.getAttribute("data-act");
+    if (act === "hero") {
+      var m = document.getElementById("m-mod");
+      if (m) site.scrollTo({ top: m.offsetTop - 6, behavior: "smooth" });
+    } else if (act === "add") {
+      carts[current] = (carts[current] || 0) + 1;
+      var c = document.getElementById("m-cart");
+      if (c) c.textContent = carts[current];
+      status("Added to cart — " + t.getAttribute("data-n"), true);
+      var label = t.textContent;
+      t.textContent = "Added \u2713"; t.classList.add("ok");
+      setTimeout(function () { t.textContent = label; t.classList.remove("ok"); }, 900);
+    } else if (act === "filter") {
+      shopFilter = t.getAttribute("data-k");
+      site.querySelectorAll(".m-chip").forEach(function (c) { c.classList.toggle("on", c.getAttribute("data-k") === shopFilter); });
+      var grid = document.getElementById("m-prods");
+      if (grid) grid.innerHTML = d.type === "estate" ? estateCards(d) : shopCards(d);
+      status("Showing " + (shopFilter === "all" ? "everything" : t.textContent.toLowerCase()) + ".");
+    } else if (act === "pkg") {
+      pkgPick = +t.getAttribute("data-k");
+      site.querySelectorAll(".m-pkg").forEach(function (p, k) { p.classList.toggle("pick", k === pkgPick); });
+      status("Package: " + d.pkgs[pkgPick].t + " — now pick a date and time.");
+    } else if (act === "stylist") {
+      teamPick = +t.getAttribute("data-k");
+      site.querySelectorAll("[data-act='stylist']").forEach(function (b, k) { b.classList.toggle("on", k === teamPick); });
+      status("Stylist: " + d.team[teamPick] + ".");
+    } else if (act === "slot") {
+      site.querySelectorAll(".m-slot").forEach(function (s) { s.classList.remove("on"); });
+      t.classList.add("on");
+      slotPick = +t.getAttribute("data-k");
+      status("Selected " + t.textContent + " — now tap " + d.confirmBtn.toLowerCase() + ".");
+    } else if (act === "book") {
+      if (pkgPick < 0) { status("Choose a package first."); return; }
+      if (slotPick < 0) { status("Pick a time slot first."); return; }
+      var bDate = (document.getElementById("b-date") || {}).value || todayISO();
+      var bName = ((document.getElementById("bf1") || {}).value || "").trim();
+      var pkg = d.pkgs[pkgPick];
+      status("Booked — " + pkg.t + " on " + prettyDate(bDate) + " at " + d.slots[slotPick] +
+        (d.team && teamPick >= 0 ? " with " + d.team[teamPick].split(" ·")[0] : "") +
+        ". " + (d.label === "Auto detailing" ? "Free pickup arranged on WhatsApp" : "Confirmation sent on WhatsApp") + " — see you soon!", true);
+    } else if (act === "mtab") {
+      menuTab = +t.getAttribute("data-k");
+      site.querySelectorAll(".m-mtabs button").forEach(function (b, k) { b.classList.toggle("on", k === menuTab); });
+      document.getElementById("m-items").innerHTML = menuItemsHTML(d);
+    } else if (act === "reserve") {
+      var dt = document.getElementById("r-date").value;
+      var tm = document.getElementById("r-time").value;
+      var g = document.getElementById("r-guests").value;
+      status("Table for " + g + " reserved · " + prettyDate(dt) + " at " + tm + ". See you at " + d.name + "!", true);
+    } else if (act === "order") {
+      status("Order started on WhatsApp — send us your list and we\u2019ll confirm in minutes.", true);
+    } else if (act === "join") {
+      status("Great choice — " + t.getAttribute("data-n") + " plan confirmed. Pay at reception or on WhatsApp.", true);
+    } else if (act === "trial") {
+      var nm = ((document.getElementById("t-name") || {}).value || "").trim() || "Champ";
+      var goal = (document.getElementById("t-goal") || {}).value || "";
+      status("Free session booked for " + nm + " — coach will WhatsApp your slot. Goal: " + goal.toLowerCase() + ". Bring shoes and a towel!", true);
+    } else if (act === "view") {
+      status("Viewing requested for " + t.getAttribute("data-n") + " — Rania will WhatsApp you to confirm.", true);
+    } else if (act === "wa") {
+      status("Opening WhatsApp with Rania — she replies within the hour, 9–9 daily.", true);
+    } else if (act === "groom") {
+      status("Grooming slot requested — we\u2019ll WhatsApp available times today. First-time pups get a free bandana!", true);
+    } else if (act === "engrave") {
+      engraveOn = !engraveOn;
+      t.classList.toggle("on", engraveOn);
+      t.textContent = engraveOn ? "Engraving added \u2713" : "Add engraving";
+      status(engraveOn ? "Free engraving added — up to 12 characters on any bottle." : "Engraving removed.");
+    } else if (act === "tradein") {
+      var tiBox = document.getElementById("ti-box");
+      var mo = document.getElementById("ti-model"), co = document.getElementById("ti-cond");
+      var base = { "Nova X4": 1200, "Nova X3": 750, "Pulse 9": 480, "Other brand": 350 }[mo ? mo.value : ""] || 500;
+      var mult = { "Like new": 0.85, "Good": 0.65, "Fair": 0.4 }[co ? co.value : ""] || 0.5;
+      var est = Math.round(base * mult / 10) * 10;
+      var out = document.getElementById("ti-out");
+      if (out) out.innerHTML = "Trade-in estimate: <span class='m-out'>AED " + est + "</span> off any new phone — " + (co ? co.value.toLowerCase() : "") + " " + (mo ? mo.value : "").toLowerCase() + ".";
+      status("Estimate locked — bring the phone in today and we\u2019ll verify it in 10 minutes.", true);
+    } else if (act === "cake") {
+      var sz = (document.getElementById("c-size") || {}).value || "8 inch";
+      var fl = (document.getElementById("c-flavour") || {}).value || "";
+      var msg = ((document.getElementById("c-msg") || {}).value || "").trim();
+      var cd = (document.getElementById("c-date") || {}).value || todayISO();
+      status("Cake order placed — " + sz.split(" ·")[0] + " " + fl.toLowerCase() + (msg ? ' "' + msg + '"' : "") +
+        " for pickup " + prettyDate(cd) + ". We\u2019ll WhatsApp the sketch to confirm!", true);
+    }
+  });
+
+  // Live gold-rate ticker (jewellery demo)
+  setInterval(function () {
+    var d = DEMOS[current], el = document.getElementById("m-gold-rate");
+    if (!d || !d.gold || !el) return;
+    var delta = Math.round((Math.random() * 1.1 - 0.5) * 100) / 100;
+    d.gold.rate = Math.max(370, Math.round((d.gold.rate + delta) * 100) / 100);
+    el.textContent = "AED " + d.gold.rate.toFixed(2);
+    var de = document.getElementById("m-gold-delta");
+    if (de) {
+      de.textContent = (delta >= 0 ? "\u2191 + " : "\u2193 ") + Math.abs(delta).toFixed(2);
+      de.className = delta >= 0 ? "up" : "dn";
+    }
+  }, 2600);
+
+  DEMOS.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = s.label;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function () { render(i); });
+    tabs.appendChild(b);
+    buttons.push(b);
+  });
+  render(0);
+
+  // Category strip
+  var cats = ["Auto detailing", "Restaurants", "Cafes", "Bakeries", "Jewellery", "Perfume", "Cosmetics", "Baby products", "Pet shops", "Electronics", "Fashion boutiques", "Salons", "Barbershops", "Gyms", "Clinics", "Dental offices", "Real estate", "Travel agencies", "Florists", "Cleaning services", "Contractors", "Car rental", "Photographers", "Schools and tutors", "Small companies"];
+  var track = document.getElementById("track");
+  [0, 1].forEach(function (pass) {
+    cats.forEach(function (c) {
+      var s = document.createElement("span");
+      s.textContent = c;
+      if (pass) s.setAttribute("aria-hidden", "true");
+      track.appendChild(s);
+    });
+  });
+
+  // Mobile menu
+  var btn = document.getElementById("menu-btn");
+  var nav = document.getElementById("nav");
+  function setMenu(open) {
+    nav.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+  btn.addEventListener("click", function () { setMenu(!nav.classList.contains("open")); });
+  nav.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+
+  // Contact links
+  var digits = (CONFIG.whatsapp || "").replace(/\D/g, "");
+  if (digits) {
+    var msg = encodeURIComponent("Hi Derick, I'd like a website for my business.");
+    document.querySelectorAll("[data-wa]").forEach(function (a) {
+      a.href = "https://wa.me/" + digits + "?text=" + msg;
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  }
+  if (CONFIG.email) {
+    var ml = document.getElementById("mail-link");
+    ml.href = "mailto:" + CONFIG.email;
+    ml.textContent = CONFIG.email;
+    document.getElementById("line-mail").hidden = false;
+  }
+
+  // Lead form -> email
+  var lf = document.getElementById("lead-form");
+  if (lf && CONFIG.email) {
+    var lNote = document.getElementById("lead-note");
+    var lBtn = document.getElementById("lead-send");
+    lf.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!lf.company_name.value.trim() || !lf.email.value.trim()) return;
+      lBtn.disabled = true;
+      lBtn.textContent = "Sending...";
+      lNote.className = "lead-note";
+      lNote.textContent = "";
+      var fd = new FormData(lf);
+      fd.append("_subject", "New website request - RED DEV site");
+      fd.append("_template", "table");
+      fd.append("_captcha", "false");
+      fetch("https://formsubmit.co/ajax/" + encodeURIComponent(CONFIG.email), { method: "POST", body: fd, headers: { Accept: "application/json" } })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (j && (j.success === "true" || j.success === true)) {
+            lNote.className = "lead-note ok";
+            lNote.textContent = "Sent! I'll get back to you within one working day.";
+            lf.reset();
+          } else {
+            throw new Error("not sent");
+          }
+        })
+        .catch(function () {
+          lNote.className = "lead-note err";
+          lNote.textContent = "Could not send right now - please message me on WhatsApp instead.";
+        })
+        .then(function () {
+          lBtn.disabled = false;
+          lBtn.textContent = "Send";
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>
